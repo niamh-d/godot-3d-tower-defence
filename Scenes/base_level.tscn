@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://blu885i46rvl6"]
+[gd_scene load_steps=9 format=3 uid="uid://blu885i46rvl6"]
 
 [ext_resource type="MeshLibrary" uid="uid://dsqiumw83bhdy" path="res://MeshLibraries/SpaceLibrary.tres" id="1_1xu8l"]
 [ext_resource type="PackedScene" uid="uid://cgpx5d1ebwukw" path="res://Scenes/Enemy/enemy.tscn" id="2_3q4ae"]
+[ext_resource type="PackedScene" uid="uid://dkkb8h7iyh54v" path="res://Scenes/Base/base.tscn" id="3_yfdac"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_h04u7"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -21,7 +22,7 @@ albedo_color = Color(0.266667, 0.266667, 0.266667, 1)
 
 [sub_resource type="Curve3D" id="Curve3D_bseye"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -21.1886, 3.8147e-06, 5.48562, -1.33085, 0, 1.81286, 1.33085, 0, -1.81286, 13.7121, 0, 6, 1.97119, 0, 0.88262, -1.97119, 0, -0.88262, 13.1308, 0, -2.19715, 1.23567, 0, 1.26509, -1.23567, 0, -1.26509, -10.2357, 0, -1.93237, 0, 0, 0, 0, 0, 0, -10.1769, 0, -6.13952),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -21.1886, 3.8147e-06, 5.48562, -1.33085, 0, 1.81286, 1.33085, 0, -1.81286, 13.7121, 0, 6, 1.97119, 0, 0.88262, -1.97119, 0, -0.88262, 13.1308, 0, -2.19715, 1.23567, 0, 1.26509, -1.23567, 0, -1.26509, -10.2357, 0, -1.93237, 0, 0, 0, 0, 0, 0, -10, 0, -6),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0)
 }
 point_count = 5
@@ -95,3 +96,26 @@ path_joined = false
 
 [node name="Enemy" parent="Path3D" instance=ExtResource("2_3q4ae")]
 transform = Transform3D(-0.0147368, 1.09278e-07, -0.999891, -7.10543e-15, 1, 1.0929e-07, 0.999891, 1.61058e-09, -0.0147368, -21.1886, 3.8147e-06, 5.48562)
+speed = 10.0
+
+[node name="Enemy2" parent="Path3D" instance=ExtResource("2_3q4ae")]
+transform = Transform3D(-0.0601816, 1.12812e-07, -0.998187, 5.04927e-09, 1, 1.12713e-07, 0.998187, 1.74312e-09, -0.0601816, -16.1989, 3.24985e-06, 5.80431)
+progress = 5.0
+speed = 10.0
+
+[node name="Enemy3" parent="Path3D" instance=ExtResource("2_3q4ae")]
+transform = Transform3D(-0.0534631, 1.1229e-07, -0.998569, 4.29246e-09, 1, 1.12221e-07, 0.998569, 1.71336e-09, -0.0534631, -11.2069, 2.68749e-06, 6.08871)
+progress = 10.0
+speed = 10.0
+
+[node name="Enemy4" parent="Path3D" instance=ExtResource("2_3q4ae")]
+transform = Transform3D(-0.0453762, 1.11661e-07, -0.99897, 3.38624e-09, 1, 1.11622e-07, 0.99897, 1.68224e-09, -0.0453762, -6.21307, 2.12781e-06, 6.33667)
+progress = 15.0
+speed = 10.0
+
+[node name="Enemy5" parent="Path3D" instance=ExtResource("2_3q4ae")]
+transform = Transform3D(-0.0342268, 1.10794e-07, -0.999414, 2.14538e-09, 1, 1.10785e-07, 0.999414, 1.6477e-09, -0.0342268, -1.21709, 1.57165e-06, 6.53748)
+progress = 20.0
+speed = 10.0
+
+[node name="Base" parent="." instance=ExtResource("3_yfdac")]

@@ -14,3 +14,7 @@ config/name="BarbarianBlaster"
 run/main_scene="res://Scenes/base_level.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+
+[global_group]
+
+base=""
