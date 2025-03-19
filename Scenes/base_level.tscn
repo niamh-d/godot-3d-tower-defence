@@ -96,26 +96,21 @@ path_joined = false
 
 [node name="Enemy" parent="Path3D" instance=ExtResource("2_3q4ae")]
 transform = Transform3D(-0.0147368, 1.09278e-07, -0.999891, -7.10543e-15, 1, 1.0929e-07, 0.999891, 1.61058e-09, -0.0147368, -21.1886, 3.8147e-06, 5.48562)
-speed = 10.0
 
 [node name="Enemy2" parent="Path3D" instance=ExtResource("2_3q4ae")]
 transform = Transform3D(-0.0601816, 1.12812e-07, -0.998187, 5.04927e-09, 1, 1.12713e-07, 0.998187, 1.74312e-09, -0.0601816, -16.1989, 3.24985e-06, 5.80431)
 progress = 5.0
-speed = 10.0
 
 [node name="Enemy3" parent="Path3D" instance=ExtResource("2_3q4ae")]
 transform = Transform3D(-0.0534631, 1.1229e-07, -0.998569, 4.29246e-09, 1, 1.12221e-07, 0.998569, 1.71336e-09, -0.0534631, -11.2069, 2.68749e-06, 6.08871)
 progress = 10.0
-speed = 10.0
 
 [node name="Enemy4" parent="Path3D" instance=ExtResource("2_3q4ae")]
-transform = Transform3D(-0.0453762, 1.11661e-07, -0.99897, 3.38624e-09, 1, 1.11622e-07, 0.99897, 1.68224e-09, -0.0453762, -6.21307, 2.12781e-06, 6.33667)
+transform = Transform3D(-0.0453763, 1.11661e-07, -0.99897, 3.38624e-09, 1, 1.11622e-07, 0.99897, 1.68224e-09, -0.0453763, -6.21307, 2.12781e-06, 6.33667)
 progress = 15.0
-speed = 10.0
 
 [node name="Enemy5" parent="Path3D" instance=ExtResource("2_3q4ae")]
 transform = Transform3D(-0.0342268, 1.10794e-07, -0.999414, 2.14538e-09, 1, 1.10785e-07, 0.999414, 1.6477e-09, -0.0342268, -1.21709, 1.57165e-06, 6.53748)
 progress = 20.0
-speed = 10.0
 
 [node name="Base" parent="." instance=ExtResource("3_yfdac")]
