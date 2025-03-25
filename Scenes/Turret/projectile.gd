@@ -1,3 +1,4 @@
+class_name Projectile
 extends Area3D
 
 @export var speed := 30.0
