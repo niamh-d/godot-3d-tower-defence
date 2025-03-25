@@ -1,8 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://cgpx5d1ebwukw"]
+[gd_scene load_steps=4 format=3 uid="uid://cgpx5d1ebwukw"]
 
 [ext_resource type="Script" path="res://Scenes/Enemy/enemy.gd" id="1_odmem"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_8ox08"]
+radius = 1.0
+height = 3.0
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g8hny"]
 radius = 1.0
 height = 3.0
 
@@ -13,3 +17,11 @@ script = ExtResource("1_odmem")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 mesh = SubResource("CapsuleMesh_8ox08")
+
+[node name="EnemyArea3D" type="Area3D" parent="." groups=["enemy_area"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="EnemyArea3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+shape = SubResource("CapsuleShape3D_g8hny")
+
+[connection signal="area_entered" from="EnemyArea3D" to="." method="_on_enemy_area_3d_area_entered"]

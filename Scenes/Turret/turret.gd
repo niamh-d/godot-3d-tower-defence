@@ -8,8 +8,9 @@ extends Node3D
 var enemy_path: Path3D
 
 func _physics_process(delta: float) -> void:
-	var enemy: PathFollow3D = enemy_path.get_children().back()
-	look_at(enemy.global_position, Vector3.UP, true)
+	var enemy = enemy_path.get_children().back()
+	if enemy is Enemy:
+		look_at(enemy.global_position, Vector3.UP, true)
 
 func _on_timer_timeout() -> void:
 	var shot: Projectile = projectile.instantiate()
