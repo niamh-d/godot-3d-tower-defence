@@ -6,7 +6,7 @@ extends MarginContainer
 
 var gold: int:
 	set(gold_in):
-		gold = 0 if gold + gold_in < 0 else gold + gold_in
+		gold = max(gold_in, 0)
 		set_label()
 		
 func _ready() -> void:

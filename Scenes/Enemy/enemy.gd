@@ -3,8 +3,10 @@ extends PathFollow3D
 
 @export var speed: float = 5.0
 @export var max_health := 5
+@export var gold_dropped := 15
 
 @onready var base = get_tree().get_first_node_in_group("base")
+@onready var bank = get_tree().get_first_node_in_group("bank")
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
 
 var current_health: int
@@ -20,9 +22,13 @@ func _process(delta: float) -> void:
 func apply_damage() -> void:
 	base.take_damage()
 	set_process(false)
+	
+func die() -> void:
+	queue_free()
+	bank.gold += gold_dropped
 
 func take_damage() -> void:
 	current_health -= 1
 	anim_player.play("take_damage")
 	if current_health <= 0:
-		queue_free()
+		die()
