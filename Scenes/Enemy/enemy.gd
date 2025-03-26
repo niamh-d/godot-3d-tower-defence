@@ -5,6 +5,7 @@ extends PathFollow3D
 @export var max_health := 5
 
 @onready var base = get_tree().get_first_node_in_group("base")
+@onready var anim_player: AnimationPlayer = $AnimationPlayer
 
 var current_health: int
 
@@ -22,5 +23,6 @@ func apply_damage() -> void:
 
 func take_damage() -> void:
 	current_health -= 1
+	anim_player.play("take_damage")
 	if current_health <= 0:
 		queue_free()
