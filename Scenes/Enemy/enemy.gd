@@ -1,7 +1,7 @@
 class_name Enemy
 extends PathFollow3D
 
-@export var speed: float = 2.5
+@export var speed: float = 5.0
 @export var max_health := 5
 
 @onready var base = get_tree().get_first_node_in_group("base")
