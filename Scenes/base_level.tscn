@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://blu885i46rvl6"]
+[gd_scene load_steps=16 format=3 uid="uid://blu885i46rvl6"]
 
 [ext_resource type="MeshLibrary" uid="uid://dsqiumw83bhdy" path="res://MeshLibraries/SpaceLibrary.tres" id="1_1xu8l"]
 [ext_resource type="PackedScene" uid="uid://bxyu0ex26b26g" path="res://Scenes/RayPickerCamera/ray_picker_camera.tscn" id="1_17pwx"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://Scenes/turret_manager.gd" id="5_otcax"]
 [ext_resource type="PackedScene" uid="uid://1ucm44u2hm55" path="res://Scenes/Turret/turret.tscn" id="6_17e4r"]
 [ext_resource type="Script" path="res://Scenes/bank.gd" id="8_7dj6r"]
+[ext_resource type="PackedScene" uid="uid://diwuebnb7lnbc" path="res://Scenes/DifficultyManager/difficulty_manager.tscn" id="9_jgu1i"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_h04u7"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -63,10 +64,11 @@ data = {
 "cells": PackedInt32Array(65535, 65534, 0, 65531, 65534, 0, 65532, 65534, 0, 0, 65534, 0, 1, 65534, 0, 2, 65534, 0, 3, 65534, 0, 4, 65534, 0, 4, 65535, 0, 4, 0, 0, 4, 1, 0, 4, 2, 0, 65531, 65535, 0, 65531, 0, 0, 65531, 2, 0, 65532, 2, 0, 65533, 2, 0, 65534, 2, 0, 65535, 2, 0, 0, 2, 0, 1, 2, 0, 2, 2, 0, 3, 2, 0, 65534, 65534, 0, 65532, 65535, 0, 65532, 0, 0, 65533, 0, 0, 65534, 0, 0, 65535, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0)
 }
 
-[node name="EnemyPath" type="Path3D" parent="."]
+[node name="EnemyPath" type="Path3D" parent="." node_paths=PackedStringArray("difficulty_manager")]
 curve = SubResource("Curve3D_bseye")
 script = ExtResource("3_4pwha")
 enemy_scene = ExtResource("2_3q4ae")
+difficulty_manager = NodePath("../DifficultyManager")
 
 [node name="Road" type="CSGPolygon3D" parent="EnemyPath"]
 polygon = PackedVector2Array(-1, 0, -1, 0.1, 1, 0.1, 1, 0)
@@ -137,5 +139,7 @@ size_flags_horizontal = 0
 size_flags_vertical = 8
 text = "000"
 label_settings = SubResource("LabelSettings_h3usv")
+
+[node name="DifficultyManager" parent="." instance=ExtResource("9_jgu1i")]
 
 [connection signal="timeout" from="EnemyPath/Timer" to="EnemyPath" method="_on_timer_timeout"]
