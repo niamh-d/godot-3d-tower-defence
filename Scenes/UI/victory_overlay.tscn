@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://b6wdcl6d8kx5s"]
+[gd_scene load_steps=4 format=3 uid="uid://b6wdcl6d8kx5s"]
 
 [ext_resource type="Script" path="res://Scenes/UI/victory_overlay.gd" id="1_86h3d"]
+[ext_resource type="Texture2D" uid="uid://cy38mvh6txo3m" path="res://Assets/star.png" id="2_j5t0i"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_15ayx"]
 font_size = 96
@@ -35,6 +36,65 @@ layout_mode = 2
 layout_mode = 2
 text = "YOU WON!"
 label_settings = SubResource("LabelSettings_15ayx")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StarContainer" type="HBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Star1" type="TextureRect" parent="CenterContainer/PanelContainer/VBoxContainer/StarContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_j5t0i")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Star2" type="TextureRect" parent="CenterContainer/PanelContainer/VBoxContainer/StarContainer"]
+unique_name_in_owner = true
+modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_j5t0i")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Star3" type="TextureRect" parent="CenterContainer/PanelContainer/VBoxContainer/StarContainer"]
+unique_name_in_owner = true
+modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_j5t0i")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="SurvivedLabel" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Victory +1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FullHealthLabel" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+text = "Full health +1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GoldLabel" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+text = "500+  Gold +1"
 horizontal_alignment = 1
 vertical_alignment = 1
 

@@ -16,8 +16,9 @@ var health: int:
 
 func _ready() -> void:
 	health = max_health
-	Engine.time_scale = 5
 
 func take_damage() -> void:
-	print("hit!")
 	health -= 1
+
+func is_unscathed() -> bool:
+	return max_health == health

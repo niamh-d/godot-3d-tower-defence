@@ -116,7 +116,7 @@ wait_time = 2.0
 autostart = true
 
 [node name="Base" parent="." instance=ExtResource("3_yfdac")]
-max_health = 50
+max_health = 10
 
 [node name="TurretManager" type="Node3D" parent="." node_paths=PackedStringArray("enemy_path")]
 script = ExtResource("5_otcax")
@@ -135,6 +135,7 @@ theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 script = ExtResource("8_7dj6r")
+starting_gold = 10000
 
 [node name="Label" type="Label" parent="Bank"]
 layout_mode = 2
