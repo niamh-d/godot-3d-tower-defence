@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://blu885i46rvl6"]
+[gd_scene load_steps=19 format=3 uid="uid://blu885i46rvl6"]
 
 [ext_resource type="MeshLibrary" uid="uid://dsqiumw83bhdy" path="res://MeshLibraries/SpaceLibrary.tres" id="1_1xu8l"]
 [ext_resource type="PackedScene" uid="uid://bxyu0ex26b26g" path="res://Scenes/RayPickerCamera/ray_picker_camera.tscn" id="1_17pwx"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://1ucm44u2hm55" path="res://Scenes/Turret/turret.tscn" id="6_17e4r"]
 [ext_resource type="Script" path="res://Scenes/bank.gd" id="8_7dj6r"]
 [ext_resource type="PackedScene" uid="uid://diwuebnb7lnbc" path="res://Scenes/DifficultyManager/difficulty_manager.tscn" id="9_jgu1i"]
+[ext_resource type="FontFile" uid="uid://dfylcxcge26yt" path="res://Assets/Asap/static/Asap-Medium.ttf" id="9_lslx4"]
 [ext_resource type="PackedScene" uid="uid://b6wdcl6d8kx5s" path="res://Scenes/UI/victory_overlay.tscn" id="10_jutvg"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_h04u7"]
@@ -38,6 +39,7 @@ point_count = 5
 albedo_color = Color(0.548963, 0.548963, 0.548963, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_h3usv"]
+font = ExtResource("9_lslx4")
 font_size = 40
 outline_size = 8
 outline_color = Color(0, 0, 0, 1)
@@ -147,6 +149,7 @@ size_flags_horizontal = 0
 size_flags_vertical = 8
 text = "000"
 label_settings = SubResource("LabelSettings_h3usv")
+uppercase = true
 
 [node name="DifficultyManager" parent="." instance=ExtResource("9_jgu1i")]
 
