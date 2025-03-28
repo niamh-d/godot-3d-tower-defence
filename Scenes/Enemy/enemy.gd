@@ -3,7 +3,7 @@ extends PathFollow3D
 
 @export var speed: float = 5.0
 @export var max_health := 10
-@export var gold_dropped := 15
+@export var gold_dropped := 25
 
 @onready var base = get_tree().get_first_node_in_group("base")
 @onready var bank = get_tree().get_first_node_in_group("bank")
