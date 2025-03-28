@@ -1,21 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://1ucm44u2hm55"]
+[gd_scene load_steps=8 format=3 uid="uid://1ucm44u2hm55"]
 
 [ext_resource type="PackedScene" uid="uid://dlnip8afai2jt" path="res://Scenes/Turret/projectile.tscn" id="1_6fp02"]
 [ext_resource type="Script" path="res://Scenes/Turret/turret.gd" id="1_i7non"]
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_bdr2r"]
-height = 1.0
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_uu8ty"]
-top_radius = 0.6
-bottom_radius = 0.6
-height = 0.6
-
-[sub_resource type="BoxMesh" id="BoxMesh_k2jew"]
-size = Vector3(0.8, 0.4, 0.4)
-
-[sub_resource type="BoxMesh" id="BoxMesh_h0o8h"]
-size = Vector3(0.4, 0.2, 0.5)
+[ext_resource type="PackedScene" uid="uid://bbx41cffm22iw" path="res://Assets/Cannon.glb" id="3_cguxw"]
+[ext_resource type="PackedScene" uid="uid://dc5suycvkegb2" path="res://Assets/TurretBase.glb" id="4_nd0gc"]
 
 [sub_resource type="Animation" id="Animation_ytcxj"]
 length = 0.001
@@ -59,21 +47,14 @@ _data = {
 script = ExtResource("1_i7non")
 projectile = ExtResource("1_6fp02")
 
-[node name="TurretBase" type="MeshInstance3D" parent="."]
+[node name="TurretBase" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-mesh = SubResource("CylinderMesh_bdr2r")
 
-[node name="TurretTop" type="MeshInstance3D" parent="TurretBase"]
+[node name="TurretTop" type="Node3D" parent="TurretBase"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
-mesh = SubResource("CylinderMesh_uu8ty")
 
-[node name="Visor" type="MeshInstance3D" parent="TurretBase/TurretTop"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.501438)
-mesh = SubResource("BoxMesh_k2jew")
-
-[node name="Barrel" type="MeshInstance3D" parent="TurretBase/TurretTop/Visor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.140152)
-mesh = SubResource("BoxMesh_h0o8h")
+[node name="Cannon" parent="TurretBase/TurretTop" instance=ExtResource("3_cguxw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3, 0)
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
@@ -82,5 +63,7 @@ autostart = true
 libraries = {
 "": SubResource("AnimationLibrary_cix3h")
 }
+
+[node name="TurretBase2" parent="." instance=ExtResource("4_nd0gc")]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
